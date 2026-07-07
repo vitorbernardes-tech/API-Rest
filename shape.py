@@ -100,10 +100,20 @@ def trocar_refeicao(id):
 @app.route('/refeicao', methods=['POST'])
 def criar_refeicao():   
     data = request.get_json()
+    if data.get('quantidade de gramas', 0) <= 0:
+        return jsonify({'message': 'A quantidade de gramas deve ser um valor positivo'}), 400
+
     data['id'] = len(refeicoes) + 1
     refeicoes.append(data)
     return jsonify(data), 201
         
+@app.route('/refeicao/<int:id>', methods=['DELETE'])
+def excluir_refeicao(id):       
+    for nome, refeicao in enumerate(refeicoes):
+        if refeicao['id'] == id:
+            del refeicoes[nome]
+            return jsonify({'message': 'Refeição excluída com sucesso'})
+    return jsonify({'message': 'Refeição não encontrada'}), 404 
 
 if __name__ == '__main__':
     app.run(port=5000, host='localhost', debug=True)
