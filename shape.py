@@ -51,6 +51,7 @@ def ver_treino_por_id(id):
     for treino in treinos:
         if treino['id'] == id:
             return jsonify(treino)
+    return jsonify({'message': 'Treino não encontrado'}), 404
 
 @app.route('/treino/<int:id>', methods=['PUT'])
 def trocar_treino(id):
@@ -76,5 +77,33 @@ def excluir_treino(id):
             return jsonify({'message': 'Treino excluído com sucesso'})
     return jsonify({'message': 'Treino não encontrado'}), 404
 
+@app.route('/refeicao', methods=['GET'])
+def ver_refeicao():
+    return jsonify(refeicoes)
+
+@app.route('/refeicao/<int:id>', methods=['GET'])
+def ver_refeicao_por_id(id):
+    for refeicao in refeicoes:
+        if refeicao['id'] == id:
+            return jsonify(refeicao)
+    return jsonify({'message': 'Refeição não encontrada'}), 404
+
+@app.route('/refeicao/<int:id>', methods=['PUT'])
+def trocar_refeicao(id):    
+    refeicao_trocada = request.get_json()
+    for nome, refeicao in enumerate(refeicoes):
+        if refeicao['id'] == id:
+            refeicoes[nome].update(refeicao_trocada)
+            return jsonify(refeicoes[nome])
+    return jsonify({'message': 'Refeição não encontrada'}), 404
+
+@app.route('/refeicao', methods=['POST'])
+def criar_refeicao():   
+    data = request.get_json()
+    data['id'] = len(refeicoes) + 1
+    refeicoes.append(data)
+    return jsonify(data), 201
+        
+
 if __name__ == '__main__':
-    app.run(port=5000, host='localhost/treino', debug=True)
+    app.run(port=5000, host='localhost', debug=True)
