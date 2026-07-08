@@ -66,9 +66,20 @@ def ver_treinos_do_banco():
     lista_de_treinos = [dict(linha) for linha in treinos_db]
     return jsonify(lista_de_treinos)
 
-@app.route('/treino', methods=['GET'])
-def ver_treino():
-    return jsonify(treinos)
+@app.route('/treino', methods=['POST'])
+def criar_treino_no_banco():
+    data = request.get_json()
+
+    conn = sqlite3.connect('treinos.db')
+    cursor = conn.cursor()
+
+    cursor.execute("INSERT INTO treinos (grupo_muscular, carga_kg, exercicio)  VALUES (?, ?, ?)",
+                   (data['grupo_muscular'], data['carga_kg'], data['exercicio']))
+    
+    conn.commit()
+    conn.close()
+
+    return jsonify({'message': 'Treino criado com sucesso'}), 201
 
 @app.route('/treino/<int:id>', methods=['GET'])
 def ver_treino_por_id(id):
