@@ -1,5 +1,4 @@
 # API-Rest
 # API Shape & Health Tracker
 
-# Sistema de API REST para registrar rotinas de academia e acompanhamento nutricional, contendo exercícios e refeições
-Serve para salvar arquivos e dados importanates (pessoais) e para fazer uma requisição e ter uma determinada informação
+# O sistema foi desenvolvido para aplicar na prática a estruturação de rotas HTTP, validação de dados em formato JSON e persistência de informações utilizando um banco de dados relacional (SQLite).
