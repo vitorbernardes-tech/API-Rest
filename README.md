@@ -25,3 +25,10 @@ O objetivo principal deste projeto foi aplicar na prática conceitos fundamentai
 * **Banco de Dados:** SQLite
 * **Hospedagem / Deploy:** PythonAnywhere
 * **Testes de API:** Postman
+
+
+---
+
+## Link para Acessar o API
+
+(http://vitorbernardes.pythonanywhere.com/treino)
