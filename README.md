@@ -33,4 +33,5 @@ O objetivo principal deste projeto foi aplicar na prática conceitos fundamentai
 
 
 ---
-<img width="1224" height="813" alt="image" src="https://github.com/user-attachments/assets/f5a52f5b-8d89-4558-88af-b809778986a6" />
+<img width="1223" height="815" alt="Captura de tela 2026-08-05 150244" src="https://github.com/user-attachments/assets/b101bd34-79f6-42c4-a33d-79041a08aeb6" />
+
