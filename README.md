@@ -11,10 +11,15 @@ O objetivo principal deste projeto foi aplicar na prática conceitos fundamentai
 ### 🏋️ Gestão de Treinos
 * Cadastro de exercícios, grupo muscular e carga (peso em kg).
 * **Regra de validação:** A carga informada deve ser rigorosamente maior ou igual a 1 kg.
+*  Link  para Acessar o API
+ (http://vitorbernardes.pythonanywhere.com/treino)
+
 
 ### 🥗 Gestão de Refeições
 * Registro de refeições com nome e quantidade de alimentos (em gramas).
 * **Regra de validação:** A quantidade em gramas não pode ser um valor negativo (deve ser maior ou igual a 0).
+* Link para Acessar o API
+(http://vitorbernardes.pythonanywhere.com/refeicao)
 
 ---
 
@@ -28,7 +33,3 @@ O objetivo principal deste projeto foi aplicar na prática conceitos fundamentai
 
 
 ---
-
-## Link para Acessar o API
-
-(http://vitorbernardes.pythonanywhere.com/treino)
